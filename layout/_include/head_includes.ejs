@@ -1,5 +1,6 @@
 <%- include("cdn.ejs") %>
 <link rel="stylesheet" href="<%= this.cdn.libs.css.bootstrap %>" crossorigin="anonymous">
+<link rel="stylesheet" href="<%= this.cdn.libs.css.fancybox %>" crossorigin="anonymous">
 <link rel="stylesheet" href="<%- url_for(`css/journal.css?${Math.round(Math.random() * 99999999)}`) %>">
 <% if (theme.favicon || config.favicon){ %>
 <link rel="icon" href="<%- config.favicon ? config.favicon : theme.favicon %>">
@@ -7,4 +8,4 @@
 <% if (theme.hljsTheme) { %>
 <link rel="stylesheet" href="<%= ["/", "http:", "https:"].some(s => theme.hljsTheme.startsWith(s)) ? theme.hljsTheme : (this.cdn.libs.css.hljs + theme.hljsTheme + this.cdn.libs.css.hljsSuffix) %>" crossorigin="anonymous">
 <% } %>
-<link rel="stylesheet" href="<%= this.cdn.fonts %>/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+<link rel="stylesheet" href="<%= this.cdn.fonts %>/css2?family=Hind+Vadodara:wght@300;400&family=Montserrat&family=Fira+Code&family=Material+Icons&display=block">

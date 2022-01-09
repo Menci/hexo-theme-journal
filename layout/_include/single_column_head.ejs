@@ -55,7 +55,7 @@
 <div class="single-column-header-container" ref="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
     <a href="<%= config.root %>">
-        <div class="single-column-header-title"><%= config.title %></div>
-        <div class="single-column-header-subtitle"><%= config.description %></div>
+        <div class="single-column-header-title"><%- theme.sidebar_title ? theme.sidebar_title : config.title %></div>
+        <div class="single-column-header-subtitle"><%- theme.sidebar_subtitle ? theme.sidebar_subtitle : config.subtitle %></div>
     </a>
 </div>
