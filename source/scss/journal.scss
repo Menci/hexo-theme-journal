@@ -9,7 +9,7 @@ $sans-preferred-font-list: "Hind Vadodara", "Noto Sans CJK SC", "Source Han Sans
 $color-main: #333;
 $color-subtitle: #888;
 $color-code: #e64e79;
-$color-code-bg: rgba(251, 93, 138, 0.07);
+$color-code-bg: rgba(251, 93, 138, 0.05);
 $color-quote-border: rgba(251, 93, 138, 0.70);
 $color-quote-bg: rgba(251, 93, 138, 0.05);
 $color-a: #ef6a8f;
@@ -428,6 +428,7 @@ a {
     transition: all 0.2s linear;
     color: $color-nav;
     .nav-title {
+      color: $color-nav;
       font-size: $nav-title-size;
       line-height: $nav-title-size * 1.4;
       letter-spacing: 0.2px;
@@ -1004,7 +1005,7 @@ a {
   }
 }
 
-.headerlink.processed {
+.headerlink {
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
 
@@ -1023,7 +1024,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  &:hover > .headerlink.processed {
+  &:hover > .headerlink {
     opacity: 1;
   }
 }
@@ -1083,3 +1084,5 @@ h1, h2, h3, h4, h5, h6 {
 .post-body > :last-child {
   margin-bottom: 0;
 }
+
+@import "highlight";

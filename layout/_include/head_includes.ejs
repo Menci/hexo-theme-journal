@@ -1,6 +1,7 @@
 <%- include("cdn.ejs") %>
 <link rel="stylesheet" href="<%= this.cdn.libs.css.bootstrap %>" crossorigin="anonymous">
 <link rel="stylesheet" href="<%= this.cdn.libs.css.fancybox %>" crossorigin="anonymous">
+<link rel="stylesheet" href="<%= this.cdn.libs.css.katex %>" crossorigin="anonymous">
 <link rel="stylesheet" href="<%- url_for(`css/journal.css?${Math.round(Math.random() * 99999999)}`) %>">
 <% if (theme.favicon || config.favicon){ %>
 <link rel="icon" href="<%- config.favicon ? config.favicon : theme.favicon %>">
