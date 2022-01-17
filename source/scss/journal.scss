@@ -21,21 +21,8 @@ $color-nav-bg-hover: rgba(251, 93, 138, 0.02);
 $color-nav-active-bg: rgba(251, 93, 138, 0.03);
 $color-nav-active: #e80e4c;
 $color-meta: #777;
-$color-comment-border: rgba(0, 0, 0, 0.1);
-$color-comment-placeholder-border: rgba(0, 0, 0, 0.4);
-$color-comment-meta: #777;
-$color-comment-input: #555;
-$color-comment-input-border: rgba(117, 117, 117, 0.35);
-$color-comment-pagination: $color-a-hover;
-$color-comment-pagination-bg: rgba(251, 93, 138, 0.55);
-$color-comment-button: $color-code;
-$color-comment-button-bg: #ffe7ee;
-$color-comment-button-hover-bg: rgba(251, 93, 138, 0.3);
-$color-comment-button-primary: $color-comment-button-bg;
-$color-comment-button-primary-bg: $color-comment-button;
-$color-comment-button-primary-hover-bg: #ea3769;
-$color-comment-button-primary-disabled: #fff;
-$color-comment-button-primary-disabled-bg: #ffaac2;
+$color-th: rgba(251, 93, 138, 0.12);
+$color-table-cell-border: rgba(251, 93, 138, 0.20);
 
 $side-container-width: 25%; //280px;
 $extra-container-width: 64px;
@@ -1083,6 +1070,36 @@ h1, h2, h3, h4, h5, h6 {
 
 .post-body > :last-child {
   margin-bottom: 0;
+}
+
+/* GFM Tables */
+
+table {
+  width: 100%;
+
+  thead {
+    background-color: $color-th;
+  }
+
+  th, td {
+    padding: 13px 11px;
+  }
+
+  td, th {
+    &:first-child {
+      border-left: 1px solid $color-table-cell-border;
+    }
+
+    border-right: 1px solid $color-table-cell-border;
+  }
+
+  tr {
+    &:first-child {
+      border-top: 1px solid $color-table-cell-border;
+    }
+
+    border-bottom: 1px solid $color-table-cell-border;
+  }
 }
 
 @import "highlight";
