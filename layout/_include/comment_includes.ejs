@@ -33,7 +33,6 @@
         <% for (const key of Object.keys(theme.giscus).filter(key => key !== "app")) { %>
         data-<%= key %>="<%= String(theme.giscus[key]) %>"
         <% } %>
-        crossorigin="anonymous"
         async>
 </script>
 <% } %>

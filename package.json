@@ -5,9 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "yarn build",
-        "build:css": "node-sass source/scss/journal.scss --output-style compressed -o source/css && postcss source/css/journal.css -u autoprefixer -r --no-map",
-        "build:js": "swc -q source/js/journal.js | terser --compress --mangle --toplevel > source/js/journal.min.js",
-        "build": "yarn build:css && yarn build:js"
+        "build": "bash build.sh"
     },
     "repository": {
         "type": "git",

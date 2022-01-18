@@ -6,23 +6,7 @@ $default-font-list: "Open Sans", "Noto Sans CJK SC", "Source Han Sans CN", "Sour
 $mono-font-list: "Fira Code", "Cousine", Monaco, Menlo, "Source Code Pro", monospace;
 $sans-preferred-font-list: "Hind Vadodara", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", "Droid Sans Fallback", sans-serif;
 
-$color-main: #333;
-$color-subtitle: #888;
-$color-code: #e64e79;
-$color-code-bg: rgba(251, 93, 138, 0.05);
-$color-quote-border: rgba(251, 93, 138, 0.70);
-$color-quote-bg: rgba(251, 93, 138, 0.05);
-$color-a: #ef6a8f;
-$color-a-hover: $color-code;
-$color-drawer-bg: rgba(251, 93, 138, 0.1);
-$color-nav: $color-main;
-$color-nav-border: rgba(251, 93, 138, 0.60);
-$color-nav-bg-hover: rgba(251, 93, 138, 0.02);
-$color-nav-active-bg: rgba(251, 93, 138, 0.03);
-$color-nav-active: #e80e4c;
-$color-meta: #777;
-$color-th: rgba(251, 93, 138, 0.12);
-$color-table-cell-border: rgba(251, 93, 138, 0.20);
+@import "colors";
 
 $side-container-width: 25%; //280px;
 $extra-container-width: 64px;
