@@ -28,10 +28,14 @@ function getFeaturedImage(item) {
                             <%= item.title %>
                         </div>
                         <div class="post-item-summary">
-                            <%= item.intro && item.intro.length > 0 ? item.intro : truncate(strip_html(item.content), {
+                            <% if (item.excerpt && item.excerpt.length > 0) { %>
+                            <%- item.excerpt %>
+                            <% } else { %>
+                            <%= truncate(strip_html(item.content), {
                                 length: config.truncate_len ? config.truncate_len : theme.truncate_len ? theme.truncate_len : 140,
                                 omission: '...'
                             }) %>
+                            <% } %>
                         </div>
                         <div class="post-item-meta">
                             <%= date(item.date, "YYYY-MM-DD") %>
