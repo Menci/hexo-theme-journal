@@ -2,15 +2,12 @@ $color-accent: #9f563a;
 $back-container-background: #fcfcfc;
 $front-container-background: #ffffff;
 
-$default-font-list: "Open Sans", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", "Droid Sans Fallback", sans-serif;
-$mono-font-list: "Fira Code", "Cousine", Monaco, Menlo, "Source Code Pro", monospace;
-$sans-preferred-font-list: "Hind Vadodara", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", "Droid Sans Fallback", sans-serif;
-
 @import "colors";
+@import "fonts";
 
 $side-container-width: 25%; //280px;
 $extra-container-width: 64px;
-$stream-container-max-width: 1480px;
+$stream-container-max-width: 1005px;
 
 $nav-title-size: 30px;
 $nav-subtitle-size: 18px;
@@ -33,6 +30,8 @@ $color-text: $deep-dark-accent;
   $color-text: $deep-dark-accent;
 }
 
+$color-text: rgba(0, 0, 0, 0.85);
+
 $single-column-max-width: 1020px;
 $single-column-drawer-width: 260px;
 $single-column-nav-title-size: 28px;
@@ -51,6 +50,11 @@ $h-diff: 3px;
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body {
@@ -377,7 +381,7 @@ a {
   position: fixed;
   top: 0;
   height: 100vh;
-  width: Min(25%, 400px);
+  width: 25%;
   text-align: right;
   font-family: $sans-preferred-font-list;
   padding: 20px 0 50px 0;
@@ -536,10 +540,12 @@ a {
 }
 
 .stream-container {
-  padding-left: Min(25%, 400px);
+  padding-left: 25%;
   padding-right: $extra-container-width;
-  width: 100%;
+  width: calc(100% - 25% - $extra-container-width);
   min-height: 100vh;
+  max-width: $stream-container-max-width;
+  box-sizing: content-box;
 
   @media screen and (max-width: $single-column-max-width) {
     padding: 0;
@@ -1083,6 +1089,123 @@ table {
     }
 
     border-bottom: 1px solid $color-table-cell-border;
+  }
+}
+
+/* Friends */
+.friends {
+  font-family: "Source Sans Pro", $default-font-list;
+
+  $avatar-top: 50px;
+  $avatar-left: 12px;
+  $avatar-right: 12px;
+  $avatar-bottom: 12px;
+  $avatar-size: 70px;
+  $banner-height: $avatar-top + $avatar-size / 2;
+  $text-height: 40px;
+
+  $name-size: 21.5px;
+  $description-size: 15px;
+
+  $card-width: 290px;
+  $card-height: $avatar-top + $avatar-size + $avatar-bottom;
+
+  $spacing-vertical: 25px;
+  $spacing-horizontal: 25px;
+
+  .friend-link {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: -$spacing-horizontal;
+  margin-bottom: -$spacing-vertical;
+
+  .friend {
+    width: $card-width;
+    height: $card-height;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: $spacing-horizontal;
+    margin-bottom: $spacing-vertical;
+
+    .avatar {
+      position: absolute;
+      top: $avatar-top;
+      left: $avatar-left;
+      width: $avatar-size;
+      height: $avatar-size;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      background-color: #fff;
+
+      img {
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: $banner-height;
+      overflow: hidden;
+
+      > img {
+        border-radius: 0;
+        // object-fit: cover;
+        // max-width: initial;
+        // width: 100%;
+        // min-height: 100%;
+        // transform: translate(-50%, -50%);
+        // position: relative;
+        // top: calc(50%);
+        // left: 50%;
+      }
+
+      &::after {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(60,60,60,0.25) 0%, rgba(0,0,0,0) 60%);
+      }
+    }
+
+    .text {
+      position: absolute;
+      top: $banner-height - $text-height - 2px;
+      left: $avatar-left + $avatar-size + $avatar-right;
+    }
+
+    .name {
+      line-height: $text-height;
+      font-size: $name-size;
+      font-weight: bolder;
+      text-shadow: 0 0 10px #000;
+      color: #f9f9f9;
+    }
+
+    .description {
+      margin-top: 3px;
+      line-height: $text-height;
+      // line-height: #{$card-height - $banner-height};
+      color: #888;
+      font-size: $description-size;
+      // letter-spacing: -0.1px;
+    }
   }
 }
 

@@ -1,4 +1,7 @@
 @import "colors";
+@import "fonts";
+
+@import url("https://cdn.menci.xyz/fonts/css2?family=Noto+Sans+SC:wght@300;400;600&family=Source+Sans+Pro:wght@400;600&family=Lato:wght@400;500&family=Hind+Vadodara:wght@300;400&family=Montserrat&family=Fira+Code&family=Material+Icons&display=block");
 
 main {
   --color-prettylights-syntax-comment: #6e7781;
@@ -58,7 +61,7 @@ main {
   --color-canvas-default: #fff;
   --color-canvas-overlay: #fff;
   --color-canvas-inset: #faf6f8;
-  --color-canvas-subtle: #faf6f8;
+  --color-canvas-subtle: hsl(330deg 29% 94.5%);
   --color-border-default: #ded0d7;
   --color-border-muted: #e4d8e0;
   --color-neutral-muted: rgba(193, 175, 185, 0.2);
@@ -86,4 +89,12 @@ input::placeholder, textarea::placeholder {
 
 main .pagination-loader-container {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMCAxMUw4IDVMMTYgMTEiIHN0cm9rZT0iI2UxZTRlOCIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLXdpZHRoPSIxLjUiIC8+Cjwvc3ZnPgo=)
+}
+
+body {
+  font-family: $default-font-list !important;
+}
+
+code, kbd, pre, samp {
+  font-family: $mono-font-list !important;
 }

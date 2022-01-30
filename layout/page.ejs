@@ -42,7 +42,14 @@ function getFeaturedImage() {
             <div class="post-body-wrapper">
                 <div class="post-body">
                     <%- (page.toc ?? theme.toc) ? toc(page.content) : null %>
+                    <% if (page.layout === "friends") { %>
+                    <% const [top, bottom] = page.content.split("<div>{{ friends }}</div>"); %>
+                    <%- top %>
+                    <%- include("_include/friends.ejs") %>
+                    <%- bottom %>
+                    <% } else { %>
                     <%- page.content %>
+                    <% } %>
                 </div>
             </div>
     

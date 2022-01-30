@@ -1,0 +1,58 @@
+<%
+const fs = require("fs");
+const path = require("path");
+
+const friendDir = id => path.join(hexo.base_dir, "source", "friends", id);
+function getFile(id, prefix) {
+  return fs.readdirSync(friendDir(id)).find(s => s.startsWith(prefix));
+}
+
+%>
+<div class="friends" style="display: none; ">
+<% for (const friend of page.friends) { %>
+  <div class="friend">
+    <a class="friend-link" href="<%= friend.link %>" target="_blank">
+      <div class="banner">
+        <img src="<%= friend.id %>/<%= getFile(friend.id, "banner.") %>">
+      </div>
+    </a>
+    <div class="avatar">
+      <a class="friend-link" href="<%= friend.link %>" target="_blank">
+        <img src="<%= friend.id %>/<%= getFile(friend.id, "avatar.") %>">
+      </a>
+    </div>
+    </a>
+    <div class="text">
+      <div class="name">
+        <a class="friend-link" href="<%= friend.link %>" target="_blank">
+          <%= friend.name %>
+        </a>
+      </div>
+      <div class="description">
+        <% if (friend.descriptionFontScale) { %>
+        <span style="font-size: <%= friend.descriptionFontScale %>em; ">
+          <%- friend.description %>
+        </span>
+        <% } else { %>
+          <%- friend.description %>
+        <% } %>
+      </div>
+    </div>
+  </div>
+<% } %>
+</div>
+<script>
+(function () {
+  var list = document.querySelector(".friends");
+  var items = Array.from(list.querySelectorAll(".friend"));
+  for (var i = 1; i < items.length; i++) {
+    var j = Math.floor(Math.random() * i);
+    var t = items[j];
+    items[j] = items[i];
+    items[i] = t;
+  }
+  list.innerHTML = "";
+  for (var i = 0; i < items.length; i++) list.appendChild(items[i]);
+  list.style = "";
+})();
+</script>

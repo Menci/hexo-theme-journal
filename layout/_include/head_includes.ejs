@@ -9,4 +9,4 @@
 <% if (theme.hljsTheme) { %>
 <link rel="stylesheet" href="<%= ["/", "http:", "https:"].some(s => theme.hljsTheme.startsWith(s)) ? theme.hljsTheme : (this.cdn.libs.css.hljs + theme.hljsTheme + this.cdn.libs.css.hljsSuffix) %>" crossorigin="anonymous">
 <% } %>
-<link rel="stylesheet" href="<%= this.cdn.fonts %>/css2?family=Hind+Vadodara:wght@300;400&family=Montserrat&family=Fira+Code&family=Material+Icons&display=block">
+<link rel="stylesheet" href="<%= this.cdn.fonts %>/css2?family=Noto+Sans+SC:wght@300;400;600&family=Source+Sans+Pro:wght@400;600&family=Lato:wght@400;500&family=Hind+Vadodara:wght@300;400&family=Montserrat&family=Fira+Code&family=Material+Icons&display=block">
