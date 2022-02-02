@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "test": "yarn build",
-        "build": "bash build.sh"
+        "build": "bash build.sh",
+        "watch": "node-sass -w src/scss/journal.scss --output-style compressed -o source/css"
     },
     "repository": {
         "type": "git",

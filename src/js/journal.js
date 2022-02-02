@@ -1,3 +1,5 @@
+$('a[data-fancybox]').fancybox();
+
 let app;
 
 app = new Vue({

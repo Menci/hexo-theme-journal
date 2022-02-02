@@ -31,7 +31,7 @@ function getFeaturedImage() {
                     <%= page.title %>
                     <div class="post-meta">
                         <time datetime="<%= date_xml(page.date) %>" itemprop="datePublished">
-                            <%= date(page.date, "YYYY-MM-DD HH:mm") %>
+                            <%= date(page.date, "YYYY-MM-DD") %>
                         </time>&nbsp;
                         <% if (page.categories && page.categories.length){ %>
                         <% count = page.categories.length %>

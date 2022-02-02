@@ -110,12 +110,17 @@ button {
 }
 
 code {
-  color: $color-code;
-  background: $color-code-bg !important;
-  padding: 4px 6px;
-  border-radius: 3px;
+  color: inherit;
+  // background: $color-code-bg !important;
+  padding: 0 2px;
+  // border-radius: 3px;
   font-family: $mono-font-list;
-  vertical-align: middle;
+  // vertical-align: middle;
+  display: inline-block;
+  transform: translateY(-1px);
+
+  &.punctuation-l { padding-left: 1px; }
+  &.punctuation-r { padding-right: 1px; }
 }
 
 pre {
@@ -205,13 +210,41 @@ a {
   opacity: 0;
 }
 
-.image-caption {
-  margin: -10px auto 16px;
-  text-align: center;
-  font-size: 14px;
-  color: #999;
-  line-height: 1;
-  clear: both;
+.images {
+  $paragraph-spacing: 20px;
+  $text-paragraph-spacing-compensate: 2.5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: -($paragraph-spacing / 2 - $text-paragraph-spacing-compensate);
+  margin-bottom: $paragraph-spacing / 2 + $text-paragraph-spacing-compensate;
+
+  .image {
+    display: flex;
+    flex-direction: column;
+    margin: #{$paragraph-spacing / 2} 20px;
+
+    a {
+      text-align: center;
+
+      img {
+        max-height: 400px;
+        border-radius: 0 !important;
+      }
+    }
+
+    .image-caption {
+      margin-bottom: 0;
+      margin-top: 14px;
+      text-align: center;
+      font-size: 14px;
+      color: #999;
+      line-height: 1;
+      clear: both;
+    }
+  }
 }
 
 // dirty hack for livere
@@ -774,10 +807,6 @@ a {
           * {
             font-size: 16px;
           }
-          .material-icons {
-            vertical-align: middle;
-            margin-bottom: 3px;
-          }
 
           @media screen and (max-width: $single-column-max-width) {
             &,
@@ -845,13 +874,49 @@ a {
         @media screen and (max-width: $single-column-max-width) {
           font-size: $single-column-post-body-size;
         }
+
+        // Fix block elements' compatibility with ToC
+        .flex-wrapper {
+          display: flex;
+
+          > * {
+            flex-grow: 1;
+          }
+        }
+
         .toc {
+          $left-spacing: 30px;
+          $bottom-spacing: 30px;
+
           float: right;
           border-radius: 5px;
           background: $color-quote-bg;
           padding: 30px;
-          margin-left: 30px;
-          margin-bottom: 30px;
+          margin-left: $left-spacing;
+          margin-bottom: $bottom-spacing;
+          position: relative;
+
+          &::before, &::after {
+            content: ' ';
+            display: block;
+            position: absolute;
+            left: -$left-spacing;
+            background: #fff;
+            pointer-events: none;
+          }
+
+          &::before {
+            top: 0;
+            height: 100%;
+            width: $left-spacing;
+          }
+
+          &::after {
+            top: 100%;
+            width: calc(100% + $left-spacing);
+            height: $bottom-spacing;
+          }
+
           &,
           * {
             list-style: none;
@@ -1020,6 +1085,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 2px;
   margin-top: -0.5px;
   font-size: 19px !important;
+  vertical-align: middle;
+  margin-bottom: 3px;
 }
 
 .nav-footer {
@@ -1043,15 +1110,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Category List */
 .post-item-no-gaps .post-item-title-small {
   font-weight: normal !important;
-}
-
-/* Image caption */
-.image-caption {
-  margin: -10px auto 16px;
-  text-align: center;
-  font-size: 14px;
-  color: #999;
-  line-height: 1;
 }
 
 .post-body > p, .post-body > pre, .post-body > ul, .post-body > ol, .post-body > table {
