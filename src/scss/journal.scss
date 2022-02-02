@@ -886,37 +886,23 @@ a {
         }
 
         .toc {
-          $left-spacing: 30px;
-          $bottom-spacing: 30px;
+          $margin: var(--margin);
+          $padding: var(--padding);
+
+          --margin: 30px;
+          --padding: 30px;
+          @media screen and (max-width: $single-column-max-width) {
+            --margin: 20px;
+            --padding: 20px;
+          }
 
           float: right;
           border-radius: 5px;
           background: $color-quote-bg;
-          padding: 30px;
-          margin-left: $left-spacing;
-          margin-bottom: $bottom-spacing;
+          padding: $padding;
+          margin-left: $margin;
+          margin-bottom: $margin;
           position: relative;
-
-          &::before, &::after {
-            content: ' ';
-            display: block;
-            position: absolute;
-            left: -$left-spacing;
-            background: #fff;
-            pointer-events: none;
-          }
-
-          &::before {
-            top: 0;
-            height: 100%;
-            width: $left-spacing;
-          }
-
-          &::after {
-            top: 100%;
-            width: calc(100% + $left-spacing);
-            height: $bottom-spacing;
-          }
 
           &,
           * {
