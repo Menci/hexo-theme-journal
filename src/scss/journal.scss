@@ -1120,6 +1120,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
 
+.breadcrumb-divider {
+  margin: 0 8px;
+  color: $color-subtitle;
+  font-weight: 300;
+}
+
 /* GFM Tables */
 
 table {
