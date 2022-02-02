@@ -286,6 +286,7 @@ a {
       background: none !important;
       border: none;
       padding-top: 1px;
+      color: initial;
       &:hover {
         color: $color-nav-active !important;
       }
