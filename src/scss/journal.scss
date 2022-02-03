@@ -648,6 +648,7 @@ a {
             .post-item-summary {
               font-size: $post-summary-size;
               line-height: 1.5em;
+              margin-top: 12px;
               margin-bottom: 10px;
 
               @media screen and (max-width: $single-column-max-width) {
