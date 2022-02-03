@@ -155,7 +155,10 @@ blockquote {
 a {
   color: $color-a;
   text-decoration-color: transparent;
-  transition: text-decoration-color 0.1s ease-in-out;
+
+  &:not(.no-transition) {
+    transition: text-decoration-color 0.1s ease-in-out;
+  }
   &:hover {
     color: $color-a-hover;
     text-underline-position: under;
@@ -696,7 +699,6 @@ a {
           }
         }
 
-        // transition: all 0.2s linear;
         > * > * > * {
           transition: all 0.2s linear;
         }
@@ -713,7 +715,7 @@ a {
             text-decoration-style: 2px solid $color-a;
             text-underline-position: under;
           }
-          * {
+          > * > * > * {
             color: $color-code;
           }
 
