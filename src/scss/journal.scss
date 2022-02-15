@@ -1172,11 +1172,10 @@ table {
     display: inline-block;
   }
 
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, #{$card-width + $spacing-vertical});
   justify-content: space-around;
-  margin-right: -$spacing-horizontal;
-  margin-bottom: -$spacing-vertical;
+  margin: #{-$spacing-vertical / 2} #{-$spacing-horizontal / 2};
 
   .friend {
     width: $card-width;
@@ -1185,8 +1184,7 @@ table {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     overflow: hidden;
-    margin-right: $spacing-horizontal;
-    margin-bottom: $spacing-vertical;
+    margin: #{$spacing-vertical / 2} #{$spacing-horizontal / 2};
 
     .avatar {
       position: absolute;
