@@ -677,7 +677,7 @@ a {
               width: 230px;
               height: 120px;
               background: no-repeat center;
-              background-size: cover;
+              background-size: contain;
               border-radius: 5px;
               overflow: hidden;
 
@@ -767,7 +767,7 @@ a {
     .post-head-wrapper {
       margin-top: -20px;
       background: no-repeat center;
-      background-size: cover;
+      background-size: contain;
       position: relative;
       padding-top: 140px;
 
