@@ -1262,4 +1262,9 @@ table {
   }
 }
 
+.hl-sh-prompt::after {
+  content: attr(data-prompt);
+  color: #a6a7ae;
+}
+
 @import "highlight";
