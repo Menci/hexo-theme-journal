@@ -18,5 +18,5 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config', '<%= theme.googleAnalytics %>');</script>
 <% } %>
 <% if (theme.plausible) { %>
-<script defer data-domain="<%= theme.plausible.domain %>" src="<%= theme.plausible.script %>"></script>
+<script async data-domain="<%= theme.plausible.domain %>" src="<%= theme.plausible.script %>"></script>
 <% } %>
