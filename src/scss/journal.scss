@@ -147,8 +147,14 @@ blockquote {
   p:last-child {
     margin-bottom: 0;
   }
-  * {
+  *:not(pre) {
     color: $color-code;
+  }
+  pre {
+    padding: 0;
+  }
+  *:last-child > pre {
+    margin-bottom: 0;
   }
 }
 
