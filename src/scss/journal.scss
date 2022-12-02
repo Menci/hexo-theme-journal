@@ -1268,6 +1268,10 @@ table {
   }
 }
 
+.katex {
+  font-size: 1em !important;
+}
+
 .hl-sh-prompt::after {
   content: attr(data-prompt);
   color: #a6a7ae;
