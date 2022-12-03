@@ -144,6 +144,7 @@ blockquote {
   border-left: 3px solid $color-quote-border;
   color: $color-code;
   background: $color-quote-bg;
+  max-width: 100%;
   p:last-child {
     margin-bottom: 0;
   }
